@@ -18,9 +18,15 @@ def fetch_cep(cep: str) -> dict:
     if not cep_clean:
         raise ValueError("Empty CEP")
     url = f"https://viacep.com.br/ws/{cep_clean}/json/"
-    resp = requests.get(url, timeout=10)
-    resp.raise_for_status()
-    data = resp.json()
+    try:
+        resp = requests.get(url, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.RequestException:
+        raise
+    except ValueError:
+        raise ValueError("Invalid JSON response from ViaCEP")
+
     if data.get("erro"):
         raise ValueError("CEP not found")
     return data

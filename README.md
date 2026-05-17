@@ -26,6 +26,12 @@ pip install -r requirements.txt
 pytest -q
 ```
 
+Gerar relatório de coverage localmente:
+
+```bash
+pytest -q --cov=src --cov-report=xml
+```
+
 3. Gere o site estático (vai criar `docs/index.html`):
 
 ```bash
