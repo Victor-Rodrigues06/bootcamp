@@ -40,6 +40,8 @@ python -m src.generate_site
 
 4. Para publicar no GitHub Pages: faça commit/push para o repositório e abra PR para `main`. Depois de merge, o workflow `deploy.yml` criará o deploy automático.
 
-Deploy (link)
+## Deploy (link)
 
-O link do GitHub Pages será adicionado aqui após publicação: (ex.: https://<usuario>.github.io/<repo>)
+O site está publicado em: **https://victor-rodrigues06.github.io/bootcamp/**
+
+Acesse o link acima para visualizar os resultados da integração com a API ViaCEP.
